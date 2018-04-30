@@ -53,7 +53,12 @@ bot.on('message', async message => {
 	if (commandFile) commandFile.run(bot, message, args);
 });
 
-bot.login(tokenFile.token);
+if (process.argv[2] === 'testbot') {
+	bot.login(tokenFile.testbot);
+}
+else {
+	bot.login(tokenFile.distbot);
+}
 
 /*Resources:
  {TheSourceCode}: https://www.youtube.com/channel/UCNXt2MrZaqfIBknamqwzeXA

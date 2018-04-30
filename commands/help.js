@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
 		.setThumbnail(botFace);
 
 	bot.commands.forEach(c => {
-		let usage = (c.help.usage === undefined) ? `!${module.exports.help.name}` : c.help.usage;
+		let usage = (c.help.usage === undefined) ? `!${c.help.name}` : c.help.usage;
 		let description = (c.help.description === undefined) ? 'No description' : c.help.description;
 		botEmbed.addField(usage, description);
 	});
