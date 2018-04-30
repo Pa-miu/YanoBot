@@ -60,4 +60,5 @@ bot.login(tokenFile.token);
  Discord.js docs: https://discord.js.org/#/docs/main/stable/general/welcome
  The Perfect Lil' Bot: https://gist.github.com/eslachance/3349734a98d30011bb202f47342601d3
  Idiot's Guide to Discord Bots: https://anidiotsguide_old.gitbooks.io/discord-js-bot-guide/content/
+ Deploying a discor.js bot to Heroku: https://github.com/synicalsyntax/discord.js-heroku
 */
