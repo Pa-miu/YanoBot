@@ -21,19 +21,20 @@ module.exports.run = async (bot, message, args) => {
 	if (author.roles.has(role.id)) return message.channel.send(`You already have that role, ${authorName}`);
 
 	// Check if the role belongs to the bot
-	if (role.hasPermission('MANAGE_ROLES')) return message.channel.send('You cannot have my role');
+	if (role.hasPermission('MANAGE_ROLES')) return message.channel.send('I cannot give you that role');
 
 	// Give them the role
 	try {
 		await author.addRole(role);
 		return message.channel.send(`${authorName} now has the role ${role}`);
-	}	catch (e) {
+	}
+	catch (e) {
 		return message.channel.send(`There was some problem in giving ${authorName} the role ${role}: ${e}`);
 	}
 };
 
 module.exports.help = {
 	name: 'addrole',
-	usage: '!addrole <role name>', 
+	usage: '!addrole <role name>',
 	description: 'Add a role to your account, use !listroles to see what\'s available'
 };
