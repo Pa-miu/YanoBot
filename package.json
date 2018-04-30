@@ -3,12 +3,21 @@
   "version": "1.0.0",
   "description": "Meme machine",
   "main": "index.js",
+  "engines": {
+    "node": "10.0.0",
+    "npm": "5.6.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pa-miu/YanoBot.git"
   },
   "author": {
     "name": "Pa-Miu",
-    "email": "gachaisbadciv@gmail.com",
+    "email": "gachaisbadciv@gmail.com"
   },
   "license": "ISC",
   "dependencies": {
