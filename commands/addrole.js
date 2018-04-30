@@ -26,10 +26,10 @@ module.exports.run = async (bot, message, args) => {
 	// Give them the role
 	try {
 		await author.addRole(role);
-		return message.channel.send(`${authorName} now has the role ${role}`);
+		return message.channel.send(`${authorName} now has the role **${role.name}**`);
 	}
 	catch (e) {
-		return message.channel.send(`There was some problem in giving ${authorName} the role ${role}: ${e}`);
+		return message.channel.send(`There was some problem in giving ${authorName} the role **${role.name}**: ${e}`);
 	}
 };
 

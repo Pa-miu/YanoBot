@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
 	let author = message.member;
 	let authorName = `**${author.displayName}**`;
 
-	// Check for the existence of a role removal
+	// Check for the existence of a role removal request
 	let roleRequest = args.join(' ');
 	if (!roleRequest) return message.channel.send(`Specify a role, ${authorName}`);
 
@@ -20,9 +20,9 @@ module.exports.run = async (bot, message, args) => {
 	// Take their role
 	try {
 		await author.removeRole(role);
-		return message.channel.send(`${authorName} no longer has the role ${role}`);
+		return message.channel.send(`${authorName} no longer has the role **${role.name}**`);
 	}	catch (e) {
-		return message.channel.send(`There was some problem in taking ${role} from ${authorName}: ${e}`);
+		return message.channel.send(`There was some problem in taking **${role.name}** from ${authorName}: ${e}`);
 	}
 };
 
