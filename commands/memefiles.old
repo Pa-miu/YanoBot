@@ -1,0 +1,30 @@
+const FileSys = require('fs');
+const Discord = require('discord.js');
+const Fuse = require('fuse.js');
+const MEME_DIR = './memes/';
+const FUSE_OPTIONS = {
+	shouldSort: true,
+	threshold: 0.03,
+	maxPatternLength: 32,
+	minMatchCharLength: 3,
+};
+
+// Slow outdated command, do not use.
+module.exports.run = async (bot, message, args) => {
+	let meme = args.join(' ');
+
+	if (!meme) return message.channel.send('?');
+
+	FileSys.readdir(MEME_DIR, (err, files) => {
+		if (err) console.log(err);
+
+		let fuse = new Fuse(files, FUSE_OPTIONS);
+		let match = files[fuse.search(meme)[0]];
+
+		return message.channel.send({files: [MEME_DIR + match]});
+	});
+};
+
+module.exports.help = {
+	name: 'memefiles'
+};
