@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
 	let fuse = new Fuse(MEME_DB, FUSE_OPTIONS);
 	let match = fuse.search(meme)[0];
 
-	return message.channel.send(match.url);
+	if (match) return message.channel.send(match.url);
 };
 
 module.exports.help = {
