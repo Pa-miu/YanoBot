@@ -1,3 +1,24 @@
 {
-	"prefix": "!"
+	"prefix": "!",
+	"fuseoptions": {
+		"shouldSort": true,
+		"threshold": 0.3,
+		"maxPatternLength": 32,
+		"minMatchCharLength": 3,
+		"keys": ["name"]
+	},
+	"memeDB": [
+		{
+			"name":"llenn",
+			"url":"https://imgur.com/RGovgFu"
+		},
+		{
+			"name":"alreadydead",
+			"url":"https://imgur.com/aDYBjrW"
+		},
+		{
+			"name":"howcute",
+			"url":"https://imgur.com/vyyE4TQ"
+		}
+	]
 }
