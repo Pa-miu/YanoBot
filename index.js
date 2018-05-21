@@ -40,8 +40,6 @@ bot.on('message', async message => {
 	if (message.author.bot) return;
 	// Ignores messages that don't begin with command prefix
 	if (message.content.indexOf(prefix) !== 0) return;
-	// Prevents bot responding to DMs
-	if (message.channel.type === 'dm') return;
 
 	// Split the command into an array,
 	// separate the command from the args,
