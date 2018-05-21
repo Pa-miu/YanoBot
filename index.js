@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 const botConfig = require('./botconfig.json');
 const tokenFile = require('./token.json');
 const COMMANDS_DIR = './commands/';
+const REACTION_MAP = botConfig.reactionMap;
 
 // Start a discord bot
 const bot = new Discord.Client({disableEveryone: true});
@@ -57,6 +58,16 @@ if (process.argv[2] === 'testbot') {
 else {
 	bot.login(tokenFile.distbot);
 }
+
+bot.on('messageReactionAdd', async (reaction, user) => {
+	// Prevents bot responding to its own emoji
+	if (reaction.me) return;
+
+	let message = reaction.message.content.split(' ');
+	let emoji = reaction.emoji.identifier;
+	let commandFile = bot.commands.get(REACTION_MAP[emoji]);
+	if (commandFile) commandFile.run(bot, message, user);
+});
 
 /*Resources:
  {TheSourceCode}: https://www.youtube.com/channel/UCNXt2MrZaqfIBknamqwzeXA
