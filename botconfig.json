@@ -7,6 +7,9 @@
 		"minMatchCharLength": 3,
 		"keys": ["name"]
 	},
+	"reactionMap": {
+			"%F0%9F%94%A2":"cryptomoji"
+	},
 	"memeDB": [
 		{
 			"name":"llenn",
